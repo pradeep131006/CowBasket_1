@@ -1,0 +1,271 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gaushala - Traditional Indian Nonprofit Design System
+   Inspired by warmth, seva (service), and Bharatiya sanskriti
+   All colors in HSL format
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Traditional Indian Palette */
+    --background: 35 40% 97%;
+    --foreground: 25 30% 15%;
+
+    --card: 35 30% 98%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 35 30% 98%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Saffron - Primary (Kesari) */
+    --primary: 30 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Deep Green - Secondary (Hara) */
+    --secondary: 120 75% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Cream/Beige - Muted */
+    --muted: 35 25% 92%;
+    --muted-foreground: 25 20% 40%;
+
+    /* Terracotta - Accent */
+    --accent: 15 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Warm Red - Destructive */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 30 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Extended Palette */
+    --saffron: 30 100% 50%;
+    --saffron-light: 35 100% 65%;
+    --saffron-dark: 25 100% 40%;
+    
+    --hara: 120 75% 25%;
+    --hara-light: 120 60% 35%;
+    
+    --terracotta: 15 60% 50%;
+    --terracotta-light: 15 50% 65%;
+    
+    --cream: 35 40% 95%;
+    --cream-dark: 35 30% 90%;
+    
+    --maroon: 350 70% 30%;
+    --gold: 45 90% 50%;
+
+    /* Gradients */
+    --gradient-saffron: linear-gradient(135deg, hsl(30 100% 50%), hsl(35 100% 60%));
+    --gradient-seva: linear-gradient(180deg, hsl(35 40% 97%) 0%, hsl(35 30% 92%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(25 100% 45%) 0%, hsl(35 100% 55%) 50%, hsl(45 90% 55%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(25 30% 20% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(25 30% 20% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(25 30% 20% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 35 30% 96%;
+    --sidebar-foreground: 25 30% 20%;
+    --sidebar-primary: 30 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 25% 90%;
+    --sidebar-accent-foreground: 25 30% 20%;
+    --sidebar-border: 35 20% 85%;
+    --sidebar-ring: 30 100% 50%;
+  }
+
+  .dark {
+    --background: 25 30% 8%;
+    --foreground: 35 30% 95%;
+
+    --card: 25 25% 12%;
+    --card-foreground: 35 30% 95%;
+
+    --popover: 25 25% 12%;
+    --popover-foreground: 35 30% 95%;
+
+    --primary: 30 100% 55%;
+    --primary-foreground: 25 30% 10%;
+
+    --secondary: 120 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 25 20% 18%;
+    --muted-foreground: 35 20% 65%;
+
+    --accent: 15 55% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 30 100% 55%;
+
+    --sidebar-background: 25 25% 10%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 30 100% 55%;
+    --sidebar-primary-foreground: 25 30% 10%;
+    --sidebar-accent: 25 20% 15%;
+    --sidebar-accent-foreground: 35 30% 90%;
+    --sidebar-border: 25 20% 18%;
+    --sidebar-ring: 30 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.3;
+  }
+
+  /* Hindi text should use proper Devanagari font */
+  .hindi-text {
+    font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+    line-height: 1.5;
+  }
+}
+
+@layer components {
+  /* Traditional Pattern Overlay */
+  .pattern-mandala {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF9933' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20v40c11.046 0 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20V10c-11.046 0-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Seva Button Styles */
+  .btn-seva {
+    @apply relative overflow-hidden transition-all duration-300;
+    background: var(--gradient-saffron);
+  }
+
+  .btn-seva::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, hsl(35 100% 60%), hsl(45 90% 55%));
+  }
+
+  .btn-seva:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Card Hover Effect */
+  .card-seva {
+    @apply transition-all duration-300;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .card-seva:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Progress Bar Animation */
+  .progress-seva {
+    @apply relative overflow-hidden rounded-full;
+    background: hsl(var(--cream-dark));
+  }
+
+  .progress-seva-fill {
+    @apply h-full rounded-full transition-all duration-1000 ease-out;
+    background: var(--gradient-saffron);
+  }
+
+  /* Decorative Border */
+  .border-desi {
+    border-image: linear-gradient(90deg, hsl(var(--saffron)), hsl(var(--hara)), hsl(var(--saffron))) 1;
+  }
+
+  /* Text Gradient */
+  .text-gradient-seva {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+}
+
+@layer utilities {
+  /* Animation Classes */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Staggered Animation Delays */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+}
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
